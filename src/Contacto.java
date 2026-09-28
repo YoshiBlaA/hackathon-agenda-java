@@ -8,8 +8,16 @@ public class Contacto {
         if (nombre == null || nombre.trim().isEmpty() || apellido == null || apellido.trim().isEmpty()) {
             throw new IllegalArgumentException(" El nombre y el apellido no pueden estar vacíos."); //opcional
         }
-        this.nombre = nombre.trim();
-        this.apellido = apellido.trim();
+        this.nombre = nombre.toLowerCase().trim().replace("á", "a")
+                .replace("é", "e")
+                .replace("í", "i")
+                .replace("ó", "o")
+                .replace("ú", "u");
+        this.apellido = apellido.toLowerCase().trim().replace("á", "a")
+                .replace("é", "e")
+                .replace("í", "i")
+                .replace("ó", "o")
+                .replace("ú", "u");;
         this.telefono = telefono;
     }
 
