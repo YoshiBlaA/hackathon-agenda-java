@@ -46,7 +46,11 @@ public class Main {
 
         try(Scanner sc = new Scanner(System.in)){
             System.out.print("Ingresa el nombre completo (nombre y apellido separados con un espacio) del contacto para obtener su numero telefónico: ");
-            String respuesta = sc.nextLine().trim().replaceAll("\\s+", " ");;
+            String respuesta = sc.nextLine().trim().replaceAll("\\s+", " ").replace("á", "a")
+                    .replace("é", "e")
+                    .replace("í", "i")
+                    .replace("ó", "o")
+                    .replace("ú", "u");;;
             System.out.println("==============BUSCANDO A " + respuesta.toUpperCase() + " ==============");
             buscarContactos(respuesta, listaContactos);
         }
