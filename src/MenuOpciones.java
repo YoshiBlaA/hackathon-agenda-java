@@ -1,11 +1,10 @@
-import org.jairo.Contacto;
 
 import java.util.Scanner;
 
 public class MenuOpciones {
     public static void main(String[] args) {
         Scanner scr = new Scanner(System.in);
-        Contacto buscar = new ();
+        Agenda agenda = new Agenda();
         int opcion;
         do {
 
@@ -24,10 +23,25 @@ public class MenuOpciones {
             opcion = scr.nextInt();
             switch (opcion) {
                 case 1: // añadir contactos
-
+                    agenda.anadirContacto();
                     break;
                 case 2:  // buscar contactos
-
+                    agenda.buscarContacto();
+                    break;
+                case 3: // lista de contactos
+                    agenda.listarContacto();
+                    break;
+                case 4:
+                    agenda.buscarPorNombre();
+                    break;
+                case 5:
+                    agenda.eliminarContacto();
+                    break;
+                case 6:
+                    agenda.modificarContacto();
+                    break;
+                case 7:
+                    agenda.espacioDisponible();
                 case 0:
                     System.out.println("Saliendo de la agenda");
                     break;
