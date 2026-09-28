@@ -1,9 +1,9 @@
 package org.jairo;
 
-import java.util.Locale;
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Daniel {
     public static void main(String[] args) {
         /**
          * CONTACTOS	NOMBRE	APELLIDO	APELLIDO	NUMERO
@@ -31,6 +31,17 @@ public class Main {
                 {"Fernanda", "Navarro", "55 2450 2009"},
                 {"Jorge", "Ortega", "55 9600 0610"},
         };
+        ArrayList<Contacto> listContactos = new ArrayList<>();
+
+        for (String[] infoContacto : infoContactos) {
+
+            String nombre = infoContacto[0];
+            String apellido = infoContacto[1];
+            String telefono = infoContacto[2];
+
+            listContactos.add(new Contacto(nombre, apellido, telefono)
+            );
+        }
 
         // LLENAR LA LISTA CON DATOS SINTETICOS
         for (int i = 0; i < infoContactos.length; i++) {
@@ -43,6 +54,10 @@ public class Main {
         for (Contacto c : listaContactos) {
             System.out.println("c = " + c);
         }
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ingresa la cantidad de contactos que quieres utilizar");
+        int NumCont = scan.nextInt();
+        espacioLibres(listContactos,NumCont);
 
         try(Scanner sc = new Scanner(System.in)){
             System.out.print("Ingresa el nombre completo (nombre y apellido separados con un espacio) del contacto para obtener su numero telefónico: ");
@@ -95,6 +110,17 @@ public class Main {
         return;
 
     }
+    //codigo daniel
+    public static void espacioLibres(ArrayList<Contacto> listaContactos, int NumCont){
+
+        if (listaContactos.size() >= NumCont ) {
+            System.out.println("Contacotos lleno, elimina contactos");
+
+        }else {
+            System.out.println("Todavia tienes "+(NumCont - listaContactos.size())+" espacios");
+        }
+    }
+    //codigo daniel
 
 
 
