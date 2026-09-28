@@ -95,6 +95,23 @@ public class Main {
 
     }
 
+    /**
+     * Busca un contacto en la lista utilizando su nombre y apellido.
+     * <p>
+     * El nombre completo debe proporcionarse en el formato "Nombre Apellido".
+     * La búsqueda no distingue entre mayúsculas y minúsculas.
+     * </p>
+     *
+     * <p>
+     * Si se encuentra el contacto, se muestra su número de teléfono.
+     * Si el formato proporcionado no es válido o el contacto no existe,
+     * se muestra un mensaje indicando la situación.
+     * </p>
+     *
+     * @param nombreCompleto nombre y apellido del contacto que se desea buscar,
+     *                       separados por un espacio
+     * @param listaContactos lista de contactos en la que se realizará la búsqueda
+     */
     public static void buscarContactos(String nombreCompleto, ArrayList<Contacto> listaContactos){
         /**
          * buscaContacto(String nombre):
