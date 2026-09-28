@@ -2,6 +2,7 @@ package org.jairo;
 
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,6 +33,19 @@ public class Main {
                 {"Jorge", "Ortega", "55 9600 0610"},
         };
 
+        ArrayList<Contacto> listContactos = new ArrayList<>();
+
+        for (int i = 0; i < infoContactos.length; i++) {
+
+            String nombre = infoContactos[i][0];
+            String apellido = infoContactos[i][1];
+            String telefono = infoContactos[i][2];
+
+            listContactos.add(
+                    new Contacto(nombre, apellido, telefono)
+            );
+        }
+
         // LLENAR LA LISTA CON DATOS SINTETICOS
         for (int i = 0; i < infoContactos.length; i++) {
             String nombre = infoContactos[i][0];
@@ -43,6 +57,18 @@ public class Main {
         for (Contacto c : listaContactos) {
             System.out.println("c = " + c);
         }
+
+
+
+        Contacto contacto = listContactos.get(3);
+
+        eliminarContacto(contacto, listContactos);
+
+        for(Contacto c : listContactos)
+        {
+            System.out.println("c = " + c);
+        }
+
 
         try(Scanner sc = new Scanner(System.in)){
             System.out.print("Ingresa el nombre completo (nombre y apellido separados con un espacio) del contacto para obtener su numero telefónico: ");
@@ -58,6 +84,10 @@ public class Main {
             System.out.println("Ocurrió un error");
             System.out.println(e);
         }
+
+
+
+
 
 
 //        buscarContactos("Maria Jimenez", listaContactos);
@@ -94,6 +124,15 @@ public class Main {
         System.out.println("El contacto no existe");
         return;
 
+    }
+
+    public static void eliminarContacto(Contacto c, ArrayList<Contacto> listaContactos) {
+
+        if (listaContactos.remove(c)) {
+            System.out.println("El contacto fue eliminado correctamente.");
+        } else {
+            System.out.println("El contacto no existe en la agenda.");
+        }
     }
 
 
