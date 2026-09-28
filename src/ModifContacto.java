@@ -1,5 +1,3 @@
-import org.jairo.Contacto;
-
 import java.util.ArrayList;
 import java.util.List;
 
