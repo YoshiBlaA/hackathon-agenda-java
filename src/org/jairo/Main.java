@@ -1,5 +1,6 @@
 package org.jairo;
 
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class Main {
          * 9	Fernanda	Navarro	Díaz	55 2450 2009
          * 10	Jorge	Ortega	Jiménez	55 9600 0610
          */
-        Contacto[] listaContactos = new Contacto[10];
+        ArrayList<Contacto> listaContactos = new ArrayList<>();
         String[][] infoContactos = {
                 {"Ana", "Martínez", "56 0045 0701"},
                 {"Carlos", "Hernández", "57 1603 1002"},
@@ -37,16 +38,20 @@ public class Main {
             String nombre = infoContactos[i][0];
             String apellido = infoContactos[i][1];
             String telefono = infoContactos[i][2];
-            listaContactos[i] = new Contacto(nombre, apellido, telefono);
+            listaContactos.add(new Contacto(nombre, apellido, telefono));
         }
 
         for (Contacto c : listaContactos) {
-            System.out.println("c = " + c);
+            System.out.println("c = " + c.toString());
         }
 
         try(Scanner sc = new Scanner(System.in)){
             System.out.print("Ingresa el nombre completo (nombre y apellido separados con un espacio) del contacto para obtener su numero telefónico: ");
-            String respuesta = sc.nextLine().trim().replaceAll("\\s+", " ");;
+            String respuesta = sc.nextLine().trim().replaceAll("\\s+", " ").replace("á", "a")
+                    .replace("é", "e")
+                    .replace("í", "i")
+                    .replace("ó", "o")
+                    .replace("ú", "u");;;
             System.out.println("==============BUSCANDO A " + respuesta.toUpperCase() + " ==============");
             buscarContactos(respuesta, listaContactos);
         }
@@ -60,7 +65,7 @@ public class Main {
 
     }
 
-    public static void buscarContactos(String nombreCompleto, Contacto[] listaContactos){
+    public static void buscarContactos(String nombreCompleto, ArrayList<Contacto> listaContactos){
         /**
          * buscaContacto(String nombre):
          * Permite buscar un contacto por nombre y apellido.
