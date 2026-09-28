@@ -6,8 +6,16 @@ public class Contacto{
     private String telefono;
 
     public Contacto(String nombre, String apellido, String telefono) {
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this.nombre = nombre.toLowerCase().trim().replace("á", "a")
+                .replace("é", "e")
+                .replace("í", "i")
+                .replace("ó", "o")
+                .replace("ú", "u");
+        this.apellido = apellido.toLowerCase().trim().replace("á", "a")
+                .replace("é", "e")
+                .replace("í", "i")
+                .replace("ó", "o")
+                .replace("ú", "u");;
         this.telefono = telefono;
     }
 
