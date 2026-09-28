@@ -1,15 +1,95 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        /**
+         * CONTACTOS	NOMBRE	APELLIDO	APELLIDO	NUMERO
+         * 1	Ana	Martínez	López	56 0045 0701
+         * 2	Carlos	Hernández	García	57 1603 1002
+         * 3	Sofía	Ramírez	Torres	55 0054 0673
+         * 4	Diego	González	Rivera	55 1100 5004
+         * 5	Mariana	Flores	Sánchez	55 7080 0905
+         * 6	Luis	Mendoza	Cruz	55 9900 0886
+         * 7	Valeria	Castillo	Morales	55 1020 0117
+         * 8	Alejandro	Vargas	Ruiz	55 6780 0338
+         * 9	Fernanda	Navarro	Díaz	55 2450 2009
+         * 10	Jorge	Ortega	Jiménez	55 9600 0610
+         */
+        ArrayList<Contacto> listaContactos = new ArrayList<>();
+        String[][] infoContactos = {
+                {"Ana", "Martínez", "56 0045 0701"},
+                {"Carlos", "Hernández", "57 1603 1002"},
+                {"Sofía", "Ramírez", "55 0054 0673"},
+                {"Diego", "González", "55 1100 5004"},
+                {"Mariana", "Flores", "55 7080 0905"},
+                {"Luis", "Mendoza", "55 9900 0886"},
+                {"Valeria", "Castillo", "55 1020 0117"},
+                {"Alejandro", "Vargas", "55 6780 0338"},
+                {"Fernanda", "Navarro", "55 2450 2009"},
+                {"Jorge", "Ortega", "55 9600 0610"},
+        };
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        ArrayList<Contacto> listContactos = new ArrayList<>();
+
+        for (int i = 0; i < infoContactos.length; i++) {
+
+            String nombre = infoContactos[i][0];
+            String apellido = infoContactos[i][1];
+            String telefono = infoContactos[i][2];
+
+            listContactos.add(
+                    new Contacto(nombre, apellido, telefono)
+            );
         }
+
+        // LLENAR LA LISTA CON DATOS SINTETICOS
+        for (int i = 0; i < infoContactos.length; i++) {
+            String nombre = infoContactos[i][0];
+            String apellido = infoContactos[i][1];
+            String telefono = infoContactos[i][2];
+            listaContactos.add(new Contacto(nombre, apellido, telefono));
+        }
+
+        for (Contacto c : listaContactos) {
+            System.out.println("c = " + c.toString());
+        }
+
+
+
+        Contacto contacto = listContactos.get(3);
+
+        FuncionDiego.eliminarContacto(contacto, listContactos);
+
+        for(Contacto c : listContactos)
+        {
+            System.out.println("c = " + c);
+        }
+
+
+        try(Scanner sc = new Scanner(System.in)){
+            System.out.print("Ingresa el nombre completo (nombre y apellido separados con un espacio) del contacto para obtener su numero telefónico: ");
+            String respuesta = sc.nextLine().trim().replaceAll("\\s+", " ").replace("á", "a")
+                    .replace("é", "e")
+                    .replace("í", "i")
+                    .replace("ó", "o")
+                    .replace("ú", "u");;;
+            System.out.println("==============BUSCANDO A " + respuesta.toUpperCase() + " ==============");
+            FuncionJairo.buscarContactos(respuesta, listaContactos);
+        }
+        catch(Exception e){
+            System.out.println("Ocurrió un error");
+            System.out.println(e);
+        }
+
+
+
+
+
+
+//        buscarContactos("Maria Jimenez", listaContactos);
+
     }
 }
