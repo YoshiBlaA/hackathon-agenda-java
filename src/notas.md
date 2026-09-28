@@ -1,0 +1,24 @@
+# hackaton_java
+iteracion 1
+Añadir contactos  - Mike (Diego apoyo) -
+Buscar contactos - Jairo - rev
+Listar contactos - Nat - rev - Sintax
+Buscar contactos por nombre(Menu general) - Zaira (Jairo apoyo) - rev sin rama
+Eliminar contacto -  Diego - rev
+Modificar telefono -  Adrian - rev
+Agenda llena - Cristian - rev
+Espacio libre - Daniel (Javier Apoyo) - rev - Completo
+
+Notas: Falta el metodo Existe contacto
+
+Iteracion 2:
+Añadir contactos  - Mike (Diego apoyo) - Competo
+Buscar contactos - Jairo - rev
+Listar contactos - Nat - rev - Sintax
+Buscar contactos por nombre(Menu general) - Zaira (Jairo apoyo) - rev sin rama - ⭐
+Eliminar contacto -  Diego - rev
+Modificar telefono -  Adrian - rev
+Agenda llena - Cristian - rev
+Espacio libre - Daniel (Javier Apoyo) - rev - Completo
+
+Iteracion 3:
