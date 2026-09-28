@@ -12,12 +12,14 @@ public class Contacto {
                 .replace("é", "e")
                 .replace("í", "i")
                 .replace("ó", "o")
-                .replace("ú", "u");
+                .replace("ú", "u")
+                .replace(" ", "");
         this.apellido = apellido.toLowerCase().trim().replace("á", "a")
                 .replace("é", "e")
                 .replace("í", "i")
                 .replace("ó", "o")
-                .replace("ú", "u");;
+                .replace("ú", "u")
+                .replace(" ", "");
         this.telefono = telefono;
     }
 
