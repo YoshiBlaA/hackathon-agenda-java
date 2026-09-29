@@ -66,21 +66,21 @@ public class ListarContactos {
     }
 
     /*-----------------------------VALIDACIONES / PRUEBAS----------------------------*/
-    public static void main(String[] args) {
-        ArrayList<Contacto> resultado = new ArrayList<>();
-        listarContactos(resultado);
-
-        resultado.add(new Contacto("Ana", "Martínez", "56 0045 0701"));
-        resultado.add(new Contacto("Carlos", "Hernández", "57 1603 1002"));
-        resultado.add(new Contacto("Sofía", "Ramírez", "55 0054 0673"));
-        resultado.add(new Contacto("Diego", "González", "55 1100 5004"));
-        resultado.add(new Contacto("Mariana", "Flores", "55 7080 0905"));
-        resultado.add(new Contacto("Luis", "Mendoza", "55 9900 0886"));
-        resultado.add(new Contacto("Valeria", "Castillo", "55 1020 0117"));
-        resultado.add(new Contacto("Alejandro", "Vargas", "55 6780 0338"));
-        resultado.add(new Contacto("Fernanda", "Navarro", "55 2450 2009"));
-        resultado.add(new Contacto("Jorge", "Ortega", "55 9600 0610"));
-
-        listarContactos(resultado);
-    }
+//    public static void main(String[] args) {
+//        ArrayList<Contacto> resultado = new ArrayList<>();
+//        listarContactos(resultado);
+//
+//        resultado.add(new Contacto("Ana", "Martínez", "56 0045 0701"));
+//        resultado.add(new Contacto("Carlos", "Hernández", "57 1603 1002"));
+//        resultado.add(new Contacto("Sofía", "Ramírez", "55 0054 0673"));
+//        resultado.add(new Contacto("Diego", "González", "55 1100 5004"));
+//        resultado.add(new Contacto("Mariana", "Flores", "55 7080 0905"));
+//        resultado.add(new Contacto("Luis", "Mendoza", "55 9900 0886"));
+//        resultado.add(new Contacto("Valeria", "Castillo", "55 1020 0117"));
+//        resultado.add(new Contacto("Alejandro", "Vargas", "55 6780 0338"));
+//        resultado.add(new Contacto("Fernanda", "Navarro", "55 2450 2009"));
+//        resultado.add(new Contacto("Jorge", "Ortega", "55 9600 0610"));
+//
+//        listarContactos(resultado);
+//    }
 }
