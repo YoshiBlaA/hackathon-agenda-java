@@ -27,6 +27,6 @@ Buscar contactos - Jairo - Completo
 Listar contactos - Nat - Completo
 Buscar contactos por nombre(Menu general) - Zaira (Jairo apoyo) - Rev
 Eliminar contacto -  Diego - Completo 
-Modificar telefono -  Adrian - Pendiente
+Modificar telefono -  Adrian - Pendiente rev
 Agenda llena - Cristian - Completo
 Espacio libre - Daniel (Javier Apoyo) - Completo
