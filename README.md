@@ -81,6 +81,16 @@ Asegúrate de contar con el **Java Development Kit (JDK 17 o superior)** instala
 ---
 
 ## 👥 Créditos
-*   **Tu Nombre / Equipo** - [@tu_usuario_github](https://github.com) - *Desarrollo de lógica y control de flujos.*
+*   **Equipo** -
+*   Jairo Cortés Morales
+*   Victor Adrian Beltran Mendez
+*   Javier Morales Arenas
+*   Leonardo Rafael Uresti Iñiguez
+*   Daniel Castro Pérez
+*   Miguel Angel Campos Hipolito
+*   Natalia González Coca
+*   Zaira Lamas
+*   Cristian Mejia
+*   Diego González Celis 
 
 🏆 *Proyecto desarrollado bajo formato contrarreloj para la evaluación técnica de la Hackatón 2026.*
