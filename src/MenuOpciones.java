@@ -4,7 +4,9 @@ import java.util.Scanner;
 public class MenuOpciones {
     public static void main(String[] args) {
         Scanner scr = new Scanner(System.in);
-        Agenda agenda = new Agenda();
+        Contacto contacto = new Contacto("Ana", "Martínez López", "56 0045 0701");
+
+
         int opcion;
         do {
 
@@ -23,25 +25,28 @@ public class MenuOpciones {
             opcion = scr.nextInt();
             switch (opcion) {
                 case 1: // añadir contactos
-                    agenda.anadirContacto();
+                    System.out.println("Igresaste a la opción de añadir contacto" );
+                    contacto.
                     break;
                 case 2:  // buscar contactos
-                    agenda.buscarContacto();
+                    System.out.println("Ingresa el nombre del contacto");
+                    scr.nextLine(); // limpiar el salto de línea pendiente
+                    String nombreCompleto = scr.nextLine();
+
+                    FuncionJairo.buscarContactos(nombreCompleto, listaContactos);
                     break;
                 case 3: // lista de contactos
-                    agenda.listarContacto();
+                    agenda.listarContactos();
                     break;
-                case 4:
-                    agenda.buscarPorNombre();
+                case 4: // Eliminar Contacto
+                    agenda.eliminarPorNombre();
                     break;
                 case 5:
-                    agenda.eliminarContacto();
-                    break;
-                case 6:
                     agenda.modificarContacto();
                     break;
-                case 7:
-                    agenda.espacioDisponible();
+                case 6:
+                    agenda.espacioContacto();
+                    break;
                 case 0:
                     System.out.println("Saliendo de la agenda");
                     break;

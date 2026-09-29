@@ -1,11 +1,9 @@
 package org.jairo;
 
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
-import java.util.ArrayList;
 
-public class Main {
+public class Daniel {
     public static void main(String[] args) {
         /**
          * CONTACTOS	NOMBRE	APELLIDO	APELLIDO	NUMERO
@@ -20,7 +18,7 @@ public class Main {
          * 9	Fernanda	Navarro	Díaz	55 2450 2009
          * 10	Jorge	Ortega	Jiménez	55 9600 0610
          */
-        ArrayList<Contacto> listaContactos = new ArrayList<>();
+        Contacto[] listaContactos = new Contacto[10];
         String[][] infoContactos = {
                 {"Ana", "Martínez", "56 0045 0701"},
                 {"Carlos", "Hernández", "57 1603 1002"},
@@ -33,17 +31,15 @@ public class Main {
                 {"Fernanda", "Navarro", "55 2450 2009"},
                 {"Jorge", "Ortega", "55 9600 0610"},
         };
-
         ArrayList<Contacto> listContactos = new ArrayList<>();
 
-        for (int i = 0; i < infoContactos.length; i++) {
+        for (String[] infoContacto : infoContactos) {
 
-            String nombre = infoContactos[i][0];
-            String apellido = infoContactos[i][1];
-            String telefono = infoContactos[i][2];
+            String nombre = infoContacto[0];
+            String apellido = infoContacto[1];
+            String telefono = infoContacto[2];
 
-            listContactos.add(
-                    new Contacto(nombre, apellido, telefono)
+            listContactos.add(new Contacto(nombre, apellido, telefono)
             );
         }
 
@@ -52,24 +48,16 @@ public class Main {
             String nombre = infoContactos[i][0];
             String apellido = infoContactos[i][1];
             String telefono = infoContactos[i][2];
-            listaContactos.add(new Contacto(nombre, apellido, telefono));
+            listaContactos[i] = new Contacto(nombre, apellido, telefono);
         }
 
         for (Contacto c : listaContactos) {
-            System.out.println("c = " + c.toString());
-        }
-
-
-
-        Contacto contacto = listContactos.get(3);
-
-        eliminarContacto(contacto, listContactos);
-
-        for(Contacto c : listContactos)
-        {
             System.out.println("c = " + c);
         }
-
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ingresa la cantidad de contactos que quieres utilizar");
+        int NumCont = scan.nextInt();
+        espacioLibres(listContactos,NumCont);
 
         try(Scanner sc = new Scanner(System.in)){
             System.out.print("Ingresa el nombre completo (nombre y apellido separados con un espacio) del contacto para obtener su numero telefónico: ");
@@ -87,32 +75,11 @@ public class Main {
         }
 
 
-
-
-
-
 //        buscarContactos("Maria Jimenez", listaContactos);
 
     }
 
-    /**
-     * Busca un contacto en la lista utilizando su nombre y apellido.
-     * <p>
-     * El nombre completo debe proporcionarse en el formato "Nombre Apellido".
-     * La búsqueda no distingue entre mayúsculas y minúsculas.
-     * </p>
-     *
-     * <p>
-     * Si se encuentra el contacto, se muestra su número de teléfono.
-     * Si el formato proporcionado no es válido o el contacto no existe,
-     * se muestra un mensaje indicando la situación.
-     * </p>
-     *
-     * @param nombreCompleto nombre y apellido del contacto que se desea buscar,
-     *                       separados por un espacio
-     * @param listaContactos lista de contactos en la que se realizará la búsqueda
-     */
-    public static void buscarContactos(String nombreCompleto, ArrayList<Contacto> listaContactos){
+    public static void buscarContactos(String nombreCompleto, Contacto[] listaContactos){
         /**
          * buscaContacto(String nombre):
          * Permite buscar un contacto por nombre y apellido.
@@ -143,15 +110,17 @@ public class Main {
         return;
 
     }
+    //codigo daniel
+    public static void espacioLibres(ArrayList<Contacto> listaContactos, int NumCont){
 
-    public static void eliminarContacto(Contacto c, ArrayList<Contacto> listaContactos) {
+        if (listaContactos.size() >= NumCont ) {
+            System.out.println("Contacotos lleno, elimina contactos");
 
-        if (listaContactos.remove(c)) {
-            System.out.println("El contacto fue eliminado correctamente.");
-        } else {
-            System.out.println("El contacto no existe en la agenda.");
+        }else {
+            System.out.println("Todavia tienes "+(NumCont - listaContactos.size())+" espacios");
         }
     }
+    //codigo daniel
 
 
 
