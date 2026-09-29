@@ -43,5 +43,20 @@ public class Agenda {
         System.out.println("Ese contacto se agrego en la agenda");
     }
 
+    public int getTamanioMaximo() {
+        return tamanioMaximo;
+    }
+
+    public void setTamanioMaximo(int tamanioMaximo) {
+        this.tamanioMaximo = tamanioMaximo;
+    }
+
+    public ArrayList<Contacto> getContactos() {
+        return contactos;
+    }
+
+    public void setContactos(ArrayList<Contacto> contactos) {
+        this.contactos = contactos;
+    }
 }
 
