@@ -25,7 +25,8 @@ public class FuncionJairo {
          *
          * Si el contacto existe, muestra el teléfono. Si no existe, muestra un mensaje indicando que no se ha encontrado.
          */
-        nombreCompleto = nombreCompleto.trim();
+        nombreCompleto = nombreCompleto.trim().replaceAll("\s+", " ");
+
         String[] nombreYApellido = nombreCompleto.split(" ");
 
         if(nombreYApellido.length != 2){
