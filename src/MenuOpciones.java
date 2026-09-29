@@ -1,10 +1,12 @@
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuOpciones {
     public static void main(String[] args) {
         Scanner scr = new Scanner(System.in);
-        Contacto contacto = new Contacto("Ana", "Martínez López", "56 0045 0701");
+        ArrayList<Contacto> agenda = new ArrayList<>();
+        //Contacto contacto = new Contacto("Ana", "Martínez López", "56 0045 0701");
 
 
         int opcion;
@@ -17,7 +19,7 @@ public class MenuOpciones {
             System.out.println("3. Lista de contactos");
             System.out.println("4. Eliminar contacto");
             System.out.println("5. Modificar telefono");
-            System.out.println("6. Espacio disponible");
+            System.out.println("6. Espacio disponible"); // memoria y espacio libre
             System.out.println("0. Salir");
 
             System.out.println("Elige una opción");
@@ -33,19 +35,19 @@ public class MenuOpciones {
                     scr.nextLine(); // limpiar el salto de línea pendiente
                     String nombreCompleto = scr.nextLine();
 
-                    FuncionJairo.buscarContactos(nombreCompleto, listaContactos);
+                    FuncionJairo.buscarContactos(nombreCompleto, agenda);
                     break;
                 case 3: // lista de contactos
-                    agenda.listarContactos();
+                    listarContactos();
                     break;
                 case 4: // Eliminar Contacto
-                    agenda.eliminarPorNombre();
+                    contacto.eliminarPorNombre();
                     break;
                 case 5:
-                    agenda.modificarContacto();
+                    contacto.modificarContacto();
                     break;
                 case 6:
-                    agenda.espacioContacto();
+                    contacto.espacioContacto();
                     break;
                 case 0:
                     System.out.println("Saliendo de la agenda");

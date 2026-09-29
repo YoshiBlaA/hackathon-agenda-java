@@ -18,7 +18,7 @@ public class Main {
          * 9	Fernanda	Navarro	Díaz	55 2450 2009
          * 10	Jorge	Ortega	Jiménez	55 9600 0610
          */
-        ArrayList<Contacto> listaContactos = new ArrayList<>();
+       /** ArrayList<Contacto> listaContactos = new ArrayList<>();
         String[][] infoContactos = {
                 {"Ana", "Martínez", "56 0045 0701"},
                 {"Carlos", "Hernández", "57 1603 1002"},
@@ -30,7 +30,7 @@ public class Main {
                 {"Alejandro", "Vargas", "55 6780 0338"},
                 {"Fernanda", "Navarro", "55 2450 2009"},
                 {"Jorge", "Ortega", "55 9600 0610"},
-        };
+        };*/
 
         ArrayList<Contacto> listContactos = new ArrayList<>();
 
