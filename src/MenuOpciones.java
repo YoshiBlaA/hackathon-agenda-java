@@ -15,10 +15,15 @@ public class MenuOpciones {
         while (true) {
             try {
                 System.out.println("¿De qué tamaño quieres la agenda?");
-                System.out.print("Ingresa el tamannio de tu agenda: ");
+                System.out.print("Ingresa el tamannio de tu agenda o el digito 0 para tener un tamaño por defecto (10 contactos): ");
                 int tamano = scr.nextInt();
-                if (tamano < 1) throw new IllegalArgumentException("El tamannio de la lista no puede ser negativo");
-                agenda = new Agenda(tamano);
+                if (tamano < 0) throw new IllegalArgumentException("El tamannio de la lista no puede ser negativo");
+
+                if(tamano == 0) agenda = new Agenda();
+                else agenda = new Agenda(tamano);
+
+                System.out.println(agenda.getTamanioMaximo());
+
                 break;
             } catch (InputMismatchException e) {
                 System.err.println("Debes ingresar un número");
