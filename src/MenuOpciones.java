@@ -7,7 +7,7 @@ public class MenuOpciones {
         Scanner scr = new Scanner(System.in);
 //        ArrayList<Contacto> agenda = new ArrayList<>();
         //Contacto contacto = new Contacto("Ana", "Martínez López", "56 0045 0701");
-        int opcion;
+        int opcion = -1;
         Agenda agenda;
         String datosUser;
 
@@ -33,7 +33,15 @@ public class MenuOpciones {
 
             System.out.println("Elige una opción");
 
-            opcion = scr.nextInt();
+            try {
+                opcion = scr.nextInt();
+            } catch (Exception e) {
+                System.out.println("La opcion debe ser un numero");
+                scr.nextLine();
+                continue;
+            }
+
+
             scr.nextLine();
             switch (opcion) {
                 case 1: // añadir contactos
@@ -57,21 +65,39 @@ public class MenuOpciones {
                     ListarContactos.listarContactos(agenda.getContactos());
                     break;
                 case 4: // Eliminar Contacto
-                    try{
-                        for (Contacto cont : agenda.getContactos()){
+                    try {
+                        for (Contacto cont : agenda.getContactos()) {
                             System.out.println(cont.toString());
                         }
                         System.out.println("Que contacto deseas eliminar?");
                         int seleccion = scr.nextInt();
-                        Contacto contacto = agenda.getContactos().get(seleccion-1);
+                        Contacto contacto = agenda.getContactos().get(seleccion - 1);
                         agenda.setContactos(FuncionDiego.eliminarContacto(contacto, agenda.getContactos()));
-                    }
-                    catch(IndexOutOfBoundsException e){
+                    } catch (IndexOutOfBoundsException e) {
                         System.out.println("No se encontro el contacto.");
                     }
                     break;
                 case 5: //modificar contacto
-                    //Pendiente
+
+                    for (Contacto cont : agenda.getContactos()) {
+                        System.out.println(cont.toString());
+                    }
+
+                    System.out.println("Para modificar un contacto, ingrese la siguiente informacion en el siguiente orden: nombre, apellido y telefono.");
+
+                    System.out.println("Nombre");
+                    String newNum = scr.nextLine();
+                    System.out.println("Apellido");
+                    String newApp = scr.nextLine();
+                    System.out.println("Telefono");
+                    String newTel = scr.nextLine();
+
+                    agenda.setContactos(ModifContacto.modificarTelefono(newNum, newApp, newTel, agenda.getContactos()));
+
+                    System.out.println("\n--- Estado final ---");
+                    for (Contacto c : agenda.getContactos()) {
+                        System.out.println(c);
+                    }
                     break;
                 case 6: // Espacio Disponible
                     Daniel.espacioLibres(agenda.getContactos(), agenda.getTamanioMaximo());
@@ -82,6 +108,8 @@ public class MenuOpciones {
                 default:
                     System.out.println("Opción no valida.");
             }
+
+
         } while (opcion !=0);
         scr.close();
     }
