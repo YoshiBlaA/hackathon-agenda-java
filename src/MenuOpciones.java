@@ -70,12 +70,11 @@ public class MenuOpciones {
                         System.out.println("No se encontro el contacto.");
                     }
                     break;
-                case 5:
-
-//                    contacto.modificarContacto();
+                case 5: //modificar contacto
+                    //Pendiente
                     break;
-                case 6:
-//                    contacto.espacioContacto();
+                case 6: // Espacio Disponible
+                    Daniel.espacioLibres(agenda.getContactos(), agenda.getTamanioMaximo());
                     break;
                 case 0:
                     System.out.println("Saliendo de la agenda");

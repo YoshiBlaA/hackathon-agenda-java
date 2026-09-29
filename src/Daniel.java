@@ -113,7 +113,7 @@ public class Daniel {
     public static void espacioLibres(ArrayList<Contacto> listaContactos, int NumCont){
 
         if (listaContactos.size() >= NumCont ) {
-            System.out.println("Contacotos lleno, elimina contactos");
+            System.out.println("Contactos lleno, elimina contactos");
 
         }else {
             System.out.println("Todavia tienes "+(NumCont - listaContactos.size())+" espacios");
