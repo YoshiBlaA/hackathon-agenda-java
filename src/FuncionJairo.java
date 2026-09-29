@@ -35,7 +35,7 @@ public class FuncionJairo {
 
         String[] nombreYApellido = nombreCompleto.split(" ");
 
-        System.out.println("nombreYApellido = " + Arrays.toString(nombreYApellido));
+//        System.out.println("nombreYApellido = " + Arrays.toString(nombreYApellido));
 
         if(nombreYApellido.length != 2){
             System.out.println("Pusiste algo más de un nombre y apellido o no seguiste el formato indicado");
