@@ -21,4 +21,12 @@ Modificar telefono -  Adrian - rev
 Agenda llena - Cristian - rev
 Espacio libre - Daniel (Javier Apoyo) - rev - Completo
 
-Iteracion 3:
+Iteracion 3 - Metodos funcionando con el Objeto Contacto
+Añadir contactos  - Mike (Diego apoyo) -
+Buscar contactos - Jairo - 
+Listar contactos - Nat - 
+Buscar contactos por nombre(Menu general) - Zaira (Jairo apoyo) - rev sin rama - ⭐
+Eliminar contacto -  Diego - rev
+Modificar telefono -  Adrian - rev
+Agenda llena - Cristian - rev
+Espacio libre - Daniel (Javier Apoyo) - rev - Com
