@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 public class Agenda {
@@ -30,4 +29,19 @@ public class Agenda {
         contactos.add(contacto);
         System.out.println("Contacto añadido correctamente: " + contacto);
     }
+
+    public void anniadirContacto(Contacto contactoIngresado){
+        // miguel angel, jairo cortes,  cristian mejia, ........., .......,
+        // liz torres
+        for(Contacto contacto : contactos){
+            if(contacto.equals(contactoIngresado)){
+                System.out.println("Ese contacto ya existe en la agenda");
+                return;
+            }
+        }
+        contactos.add(contactoIngresado);
+        System.out.println("Ese contacto se agrego en la agenda");
+    }
+
 }
+

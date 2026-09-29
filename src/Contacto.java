@@ -69,9 +69,13 @@ public class Contacto {
         Contacto c1 = new Contacto("Javier", "Perez", "555-1234");
         Contacto c2 = new Contacto("javier", "PEREZ", "999-8888");
 
-        System.out.println("Formato de impresion: " + c1);
-        System.out.println("¿Detecta que son iguales?: " + c1.equals(c2));
+        Agenda agenda = new Agenda();
+
+        agenda.anniadirContacto(c1);
+        agenda.anniadirContacto(c2);
+
     }
 
 }
+
 
