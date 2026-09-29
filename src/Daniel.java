@@ -4,83 +4,8 @@ import java.util.Scanner;
 //import java.util.ArrayList;
 
 public class Daniel {
-    public static void main(String[] args) {
-        /**
-         * CONTACTOS	NOMBRE	APELLIDO	APELLIDO	NUMERO
-         * 1	Ana	Martínez	López	56 0045 0701
-         * 2	Carlos	Hernández	García	57 1603 1002
-         * 3	Sofía	Ramírez	Torres	55 0054 0673
-         * 4	Diego	González	Rivera	55 1100 5004
-         * 5	Mariana	Flores	Sánchez	55 7080 0905
-         * 6	Luis	Mendoza	Cruz	55 9900 0886
-         * 7	Valeria	Castillo	Morales	55 1020 0117
-         * 8	Alejandro	Vargas	Ruiz	55 6780 0338
-         * 9	Fernanda	Navarro	Díaz	55 2450 2009
-         * 10	Jorge	Ortega	Jiménez	55 9600 0610
-         */
 
-//        ArrayList<Contacto> listaContactos = new ArrayList<>();
-        String[][] infoContactos = {
-                {"Ana", "Martínez", "56 0045 0701"},
-                {"Carlos", "Hernández", "57 1603 1002"},
-                {"Sofía", "Ramírez", "55 0054 0673"},
-                {"Diego", "González", "55 1100 5004"},
-                {"Mariana", "Flores", "55 7080 0905"},
-                {"Luis", "Mendoza", "55 9900 0886"},
-                {"Valeria", "Castillo", "55 1020 0117"},
-                {"Alejandro", "Vargas", "55 6780 0338"},
-                {"Fernanda", "Navarro", "55 2450 2009"},
-                {"Jorge", "Ortega", "55 9600 0610"},
-        };
-        ArrayList<Contacto> listContactos = new ArrayList<>();
-
-        for (String[] infoContacto : infoContactos) {
-
-            String nombre = infoContacto[0];
-            String apellido = infoContacto[1];
-            String telefono = infoContacto[2];
-
-            listContactos.add(new Contacto(nombre, apellido, telefono)
-            );
-        }
-
-        // LLENAR LA LISTA CON DATOS SINTETICOS
-//        for (int i = 0; i < infoContactos.length; i++) {
-//            String nombre = infoContactos[i][0];
-//            String apellido = infoContactos[i][1];
-//            String telefono = infoContactos[i][2];
-//            listaContactos.add(new Contacto(nombre, apellido, telefono));
-//        }
-
-        for (Contacto c : listContactos) {
-            System.out.println("c = " + c);
-        }
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Ingresa la cantidad de contactos que quieres utilizar");
-        int NumCont = scan.nextInt();
-        espacioLibres(listContactos,NumCont);
-
-        try(Scanner sc = new Scanner(System.in)){
-            System.out.print("Ingresa el nombre completo (nombre y apellido separados con un espacio) del contacto para obtener su numero telefónico: ");
-            String respuesta = sc.nextLine().trim().replaceAll("\\s+", " ").replace("á", "a")
-                    .replace("é", "e")
-                    .replace("í", "i")
-                    .replace("ó", "o")
-                    .replace("ú", "u");;;
-            System.out.println("==============BUSCANDO A " + respuesta.toUpperCase() + " ==============");
-            buscarContactos(respuesta, listContactos);
-        }
-        catch(Exception e){
-            System.out.println("Ocurrió un error");
-            System.out.println(e);
-        }
-
-
-//        buscarContactos("Maria Jimenez", listaContactos);
-
-    }
-
-    public static void buscarContactos(String nombreCompleto, ArrayList<Contacto>listaContactos){
+    public static void buscarContactos(String nombreCompleto, ArrayList<Contacto> listaContactos) {
         /**
          * buscaContacto(String nombre):
          * Permite buscar un contacto por nombre y apellido.
@@ -90,7 +15,7 @@ public class Daniel {
         nombreCompleto = nombreCompleto.trim();
         String[] nombreYApellido = nombreCompleto.split(" ");
 
-        if(nombreYApellido.length != 2){
+        if (nombreYApellido.length != 2) {
             System.out.println("Pusiste algo más de un nombre y apellido o no seguiste el formato indicado");
             return;
         }
@@ -98,10 +23,10 @@ public class Daniel {
         String nombreBuscado = nombreYApellido[0].toLowerCase();
         String apellidoBuscado = nombreYApellido[1].toLowerCase();
 
-        for(Contacto c : listaContactos){
+        for (Contacto c : listaContactos) {
             String nombreEnAgenda = c.getNombre().toLowerCase().trim();
             String apellidoEnAgenda = c.getApellido().toLowerCase().trim();
-            if(nombreBuscado.equals(nombreEnAgenda) && apellidoBuscado.equals(apellidoEnAgenda)){
+            if (nombreBuscado.equals(nombreEnAgenda) && apellidoBuscado.equals(apellidoEnAgenda)) {
                 System.out.println(c.getTelefono());
                 return;
             }
@@ -111,18 +36,93 @@ public class Daniel {
         return;
 
     }
-    //codigo daniel
-    public static void espacioLibres(ArrayList<Contacto> listaContactos, int NumCont){
 
-        if (listaContactos.size() >= NumCont ) {
+    //codigo daniel
+    public static void espacioLibres(ArrayList<Contacto> listaContactos, int NumCont) {
+
+        if (listaContactos.size() >= NumCont) {
             System.out.println("Contactos lleno, elimina contactos");
 
-        }else {
-            System.out.println("Todavia tienes "+(NumCont - listaContactos.size())+" espacios");
+        } else {
+            System.out.println("Todavia tienes " + (NumCont - listaContactos.size()) + " espacios");
         }
     }
     //codigo daniel
-
-
-
 }
+
+//public static void main(String[] args) {
+//    /**
+//     * CONTACTOS	NOMBRE	APELLIDO	APELLIDO	NUMERO
+//     * 1	Ana	Martínez	López	56 0045 0701
+//     * 2	Carlos	Hernández	García	57 1603 1002
+//     * 3	Sofía	Ramírez	Torres	55 0054 0673
+//     * 4	Diego	González	Rivera	55 1100 5004
+//     * 5	Mariana	Flores	Sánchez	55 7080 0905
+//     * 6	Luis	Mendoza	Cruz	55 9900 0886
+//     * 7	Valeria	Castillo	Morales	55 1020 0117
+//     * 8	Alejandro	Vargas	Ruiz	55 6780 0338
+//     * 9	Fernanda	Navarro	Díaz	55 2450 2009
+//     * 10	Jorge	Ortega	Jiménez	55 9600 0610
+//     */
+//
+////        ArrayList<Contacto> listaContactos = new ArrayList<>();
+//    String[][] infoContactos = {
+//            {"Ana", "Martínez", "56 0045 0701"},
+//            {"Carlos", "Hernández", "57 1603 1002"},
+//            {"Sofía", "Ramírez", "55 0054 0673"},
+//            {"Diego", "González", "55 1100 5004"},
+//            {"Mariana", "Flores", "55 7080 0905"},
+//            {"Luis", "Mendoza", "55 9900 0886"},
+//            {"Valeria", "Castillo", "55 1020 0117"},
+//            {"Alejandro", "Vargas", "55 6780 0338"},
+//            {"Fernanda", "Navarro", "55 2450 2009"},
+//            {"Jorge", "Ortega", "55 9600 0610"},
+//    };
+//    ArrayList<Contacto> listContactos = new ArrayList<>();
+//
+//    for (String[] infoContacto : infoContactos) {
+//
+//        String nombre = infoContacto[0];
+//        String apellido = infoContacto[1];
+//        String telefono = infoContacto[2];
+//
+//        listContactos.add(new Contacto(nombre, apellido, telefono)
+//        );
+//    }
+//
+//    // LLENAR LA LISTA CON DATOS SINTETICOS
+////        for (int i = 0; i < infoContactos.length; i++) {
+////            String nombre = infoContactos[i][0];
+////            String apellido = infoContactos[i][1];
+////            String telefono = infoContactos[i][2];
+////            listaContactos.add(new Contacto(nombre, apellido, telefono));
+////        }
+//
+//    for (Contacto c : listContactos) {
+//        System.out.println("c = " + c);
+//    }
+//    Scanner scan = new Scanner(System.in);
+//    System.out.println("Ingresa la cantidad de contactos que quieres utilizar");
+//    int NumCont = scan.nextInt();
+//    espacioLibres(listContactos, NumCont);
+//
+//    try (Scanner sc = new Scanner(System.in)) {
+//        System.out.print("Ingresa el nombre completo (nombre y apellido separados con un espacio) del contacto para obtener su numero telefónico: ");
+//        String respuesta = sc.nextLine().trim().replaceAll("\\s+", " ").replace("á", "a")
+//                .replace("é", "e")
+//                .replace("í", "i")
+//                .replace("ó", "o")
+//                .replace("ú", "u");
+//        ;
+//        ;
+//        System.out.println("==============BUSCANDO A " + respuesta.toUpperCase() + " ==============");
+//        buscarContactos(respuesta, listContactos);
+//    } catch (Exception e) {
+//        System.out.println("Ocurrió un error");
+//        System.out.println(e);
+//    }
+//
+//
+////        buscarContactos("Maria Jimenez", listaContactos);
+//
+//}

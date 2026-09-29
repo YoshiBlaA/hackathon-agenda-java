@@ -3,40 +3,6 @@ import java.util.List;
 
 public class ModifContacto {
 
-    // Lista temporal solo para probar.
-    //public static List<Contacto> contactos = new ArrayList<>();
-
-    // Modifica el teléfono de un contacto existente (se busca por nombre y apellidos)
-//    public static boolean modificarTelefono(String nombre, String apellido, String nuevoTelefono, ArrayList<Contacto> contactos) {
-//        // Validación: quitamos espacios y exigimos exactamente 10 dígitos
-//        String telefonoLimpio = (nuevoTelefono == null) ? "" : nuevoTelefono.replaceAll("\\s+", "");
-//        if (telefonoLimpio.isEmpty()) {
-//            System.out.println("El nuevo teléfono no puede estar vacío.");
-//            return false;
-//        }
-//        if (!telefonoLimpio.matches("\\d{10}")) {
-//            System.out.println("El teléfono debe tener 10 dígitos.");
-//            return false;
-//        }
-//
-//        String nombreBuscado = normalizar(nombre);
-//        String apellidoBuscado = normalizar(apellido);
-//
-//        FuncionJairo.buscarContactos(nombre + " " + apellido , contactos);
-//
-//        for (Contacto c : contactos) {
-//            if (c.getNombre().equals(nombreBuscado) && c.getApellido().equals(apellidoBuscado)) {
-//                c.setTelefono(telefonoLimpio);
-//                System.out.println("Teléfono actualizado correctamente.");
-//
-//                return true; // ya lo encontramos, no seguimos recorriendo
-//            }
-//        }
-//
-//        System.out.println("El contacto no existe en la agenda.");
-//        return false;
-//    }
-
     public static ArrayList<Contacto> modificarTelefono(String nombre, String apellido, String nuevoTelefono, ArrayList<Contacto> contactos) {
         // Validación: quitamos espacios y exigimos exactamente 10 dígitos
         String telefonoLimpio = (nuevoTelefono == null) ? "" : nuevoTelefono.replaceAll("\\s+", "");
@@ -89,10 +55,42 @@ public class ModifContacto {
 //        contactos.add(new Contacto("Jorge", "Ortega Jiménez", "5596000610"));
 //    }
 
-    // Pruebas rápidas
-    public static void main(String[] args) {
-//        cargarDatosPrueba();
+    // Lista temporal solo para probar.
+    //public static List<Contacto> contactos = new ArrayList<>();
 
+    // Modifica el teléfono de un contacto existente (se busca por nombre y apellidos)
+//    public static boolean modificarTelefono(String nombre, String apellido, String nuevoTelefono, ArrayList<Contacto> contactos) {
+//        // Validación: quitamos espacios y exigimos exactamente 10 dígitos
+//        String telefonoLimpio = (nuevoTelefono == null) ? "" : nuevoTelefono.replaceAll("\\s+", "");
+//        if (telefonoLimpio.isEmpty()) {
+//            System.out.println("El nuevo teléfono no puede estar vacío.");
+//            return false;
+//        }
+//        if (!telefonoLimpio.matches("\\d{10}")) {
+//            System.out.println("El teléfono debe tener 10 dígitos.");
+//            return false;
+//        }
+//
+//        String nombreBuscado = normalizar(nombre);
+//        String apellidoBuscado = normalizar(apellido);
+//
+//        FuncionJairo.buscarContactos(nombre + " " + apellido , contactos);
+//
+//        for (Contacto c : contactos) {
+//            if (c.getNombre().equals(nombreBuscado) && c.getApellido().equals(apellidoBuscado)) {
+//                c.setTelefono(telefonoLimpio);
+//                System.out.println("Teléfono actualizado correctamente.");
+//
+//                return true; // ya lo encontramos, no seguimos recorriendo
+//            }
+//        }
+//
+//        System.out.println("El contacto no existe en la agenda.");
+//        return false;
+//    }
+    // Pruebas rápidas
+//    public static void main(String[] args) {
+//        cargarDatosPrueba();
         // 1. Caso normal
 //        modificarTelefono("Ana", "Martínez López", "5512345678");
 //        // 2. Sin acentos y en mayúsculas (prueba la normalización)
@@ -112,5 +110,5 @@ public class ModifContacto {
 //        for (Contacto c : contactos) {
 //            System.out.println(c);
 //        }
-    }
+//    }
 }

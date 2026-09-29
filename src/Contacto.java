@@ -73,18 +73,18 @@ public class Contacto {
     }
 
     ///////////////////test//////////////////Añade un contacto
-    public static void main(String[] args) {
-        System.out.println("TEST");
-
-        Contacto c1 = new Contacto("Javier", "Perez", "555-1234");
-        Contacto c2 = new Contacto("javier", "PEREZ", "999-8888");
-
-        Agenda agenda = new Agenda();
-
-        agenda.anniadirContacto(c1);
-        agenda.anniadirContacto(c2);
-
-    }
+//    public static void main(String[] args) {
+//        System.out.println("TEST");
+//
+//        Contacto c1 = new Contacto("Javier", "Perez", "555-1234");
+//        Contacto c2 = new Contacto("javier", "PEREZ", "999-8888");
+//
+//        Agenda agenda = new Agenda();
+//
+//        agenda.anniadirContacto(c1);
+//        agenda.anniadirContacto(c2);
+//
+//    }
 
 }
 
