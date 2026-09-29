@@ -73,7 +73,7 @@ public class MenuOpciones {
                     agenda.anniadirContacto(newContac);
                     break;
                 case 2:  // buscar contactos
-                    System.out.print("Ingresa el nombre del contacto (nombre y apellida separados por coma): ");
+                    System.out.print("Ingresa el nombre del contacto (nombre y apellida separados por un espacio): ");
                     String nombreCompleto = scr.nextLine();
                     FuncionJairo.buscarContactos(nombreCompleto, agenda.getContactos());
                     break;

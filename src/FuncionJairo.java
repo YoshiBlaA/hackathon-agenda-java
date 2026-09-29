@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class FuncionJairo {
     /**
@@ -25,9 +26,16 @@ public class FuncionJairo {
          *
          * Si el contacto existe, muestra el teléfono. Si no existe, muestra un mensaje indicando que no se ha encontrado.
          */
-        nombreCompleto = nombreCompleto.trim().replaceAll("\s+", " ");
+        nombreCompleto = nombreCompleto.trim().replaceAll("\s+", " ").toLowerCase()
+                .replace("á", "a")
+                .replace("é", "e")
+                .replace("í", "i")
+                .replace("ó", "o")
+                .replace("ú", "u");
 
         String[] nombreYApellido = nombreCompleto.split(" ");
+
+        System.out.println("nombreYApellido = " + Arrays.toString(nombreYApellido));
 
         if(nombreYApellido.length != 2){
             System.out.println("Pusiste algo más de un nombre y apellido o no seguiste el formato indicado");
@@ -41,7 +49,7 @@ public class FuncionJairo {
             String nombreEnAgenda = c.getNombre().toLowerCase().trim();
             String apellidoEnAgenda = c.getApellido().toLowerCase().trim();
             if(nombreBuscado.equals(nombreEnAgenda) && apellidoBuscado.equals(apellidoEnAgenda)){
-                System.out.println(c.getTelefono());
+                System.out.println("El numero es " +  c.getTelefono());
                 return;
             }
         }
