@@ -1,5 +1,3 @@
-package org.jairo;
-
 import java.util.ArrayList;
 //import java.util.Locale;
 import java.util.Scanner;
@@ -20,7 +18,8 @@ public class Daniel {
          * 9	Fernanda	Navarro	Díaz	55 2450 2009
          * 10	Jorge	Ortega	Jiménez	55 9600 0610
          */
-        Contacto[] listaContactos = new Contacto[10];
+
+//        ArrayList<Contacto> listaContactos = new ArrayList<>();
         String[][] infoContactos = {
                 {"Ana", "Martínez", "56 0045 0701"},
                 {"Carlos", "Hernández", "57 1603 1002"},
@@ -46,14 +45,14 @@ public class Daniel {
         }
 
         // LLENAR LA LISTA CON DATOS SINTETICOS
-        for (int i = 0; i < infoContactos.length; i++) {
-            String nombre = infoContactos[i][0];
-            String apellido = infoContactos[i][1];
-            String telefono = infoContactos[i][2];
-            listaContactos[i] = new Contacto(nombre, apellido, telefono);
-        }
+//        for (int i = 0; i < infoContactos.length; i++) {
+//            String nombre = infoContactos[i][0];
+//            String apellido = infoContactos[i][1];
+//            String telefono = infoContactos[i][2];
+//            listaContactos.add(new Contacto(nombre, apellido, telefono));
+//        }
 
-        for (Contacto c : listaContactos) {
+        for (Contacto c : listContactos) {
             System.out.println("c = " + c);
         }
         Scanner scan = new Scanner(System.in);
@@ -69,7 +68,7 @@ public class Daniel {
                     .replace("ó", "o")
                     .replace("ú", "u");;;
             System.out.println("==============BUSCANDO A " + respuesta.toUpperCase() + " ==============");
-            buscarContactos(respuesta, listaContactos);
+            buscarContactos(respuesta, listContactos);
         }
         catch(Exception e){
             System.out.println("Ocurrió un error");
@@ -81,7 +80,7 @@ public class Daniel {
 
     }
 
-    public static void buscarContactos(String nombreCompleto, Contacto[] listaContactos){
+    public static void buscarContactos(String nombreCompleto, ArrayList<Contacto>listaContactos){
         /**
          * buscaContacto(String nombre):
          * Permite buscar un contacto por nombre y apellido.
@@ -127,4 +126,3 @@ public class Daniel {
 
 
 }
-
