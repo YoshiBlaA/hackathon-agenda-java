@@ -4,7 +4,7 @@ import java.util.List;
 public class ModifContacto {
 
     // Lista temporal solo para probar.
-    private static List<Contacto> contactos = new ArrayList<>();
+    public static List<Contacto> contactos = new ArrayList<>();
 
     // Modifica el teléfono de un contacto existente (se busca por nombre y apellidos)
     public static boolean modificarTelefono(String nombre, String apellido, String nuevoTelefono) {
