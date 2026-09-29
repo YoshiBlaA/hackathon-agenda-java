@@ -4,10 +4,10 @@ import java.util.List;
 public class ModifContacto {
 
     // Lista temporal solo para probar.
-    private List<Contacto> contactos = new ArrayList<>();
+    public static List<Contacto> contactos = new ArrayList<>();
 
     // Modifica el teléfono de un contacto existente (se busca por nombre y apellidos)
-    public boolean modificarTelefono(String nombre, String apellido, String nuevoTelefono) {
+    public static boolean modificarTelefono(String nombre, String apellido, String nuevoTelefono) {
         // Validación: quitamos espacios y exigimos exactamente 10 dígitos
         String telefonoLimpio = (nuevoTelefono == null) ? "" : nuevoTelefono.replaceAll("\\s+", "");
         if (telefonoLimpio.isEmpty()) {
@@ -35,7 +35,7 @@ public class ModifContacto {
     }
 
     // Normalización
-    private String normalizar(String texto) {
+    private static String normalizar(String texto) {
         return texto.toLowerCase().trim()
                 .replace("á", "a")
                 .replace("é", "e")
@@ -45,7 +45,7 @@ public class ModifContacto {
     }
 
     // 10 contactos de prueba que definió el equipo
-    private void cargarDatosPrueba() {
+    private static void cargarDatosPrueba() {
         contactos.add(new Contacto("Ana", "Martínez López", "5600450701"));
         contactos.add(new Contacto("Carlos", "Hernández García", "5716031002"));
         contactos.add(new Contacto("Sofía", "Ramírez Torres", "5500540673"));
@@ -60,26 +60,25 @@ public class ModifContacto {
 
     // Pruebas rápidas
     public static void main(String[] args) {
-        ModifContacto prueba = new ModifContacto();
-        prueba.cargarDatosPrueba();
+        cargarDatosPrueba();
 
         // 1. Caso normal
-        prueba.modificarTelefono("Ana", "Martínez López", "5512345678");
+        modificarTelefono("Ana", "Martínez López", "5512345678");
         // 2. Sin acentos y en mayúsculas (prueba la normalización)
-        prueba.modificarTelefono("SOFIA", "ramirez torres", "55 8765 4321");
+        modificarTelefono("SOFIA", "ramirez torres", "55 8765 4321");
         // 3. Contacto que no existe
-        prueba.modificarTelefono("Pedro", "Salas Luna", "5511112222");
+        modificarTelefono("Pedro", "Salas Luna", "5511112222");
         // 4. Teléfono vacío
-        prueba.modificarTelefono("Luis", "Mendoza Cruz", "   ");
+        modificarTelefono("Luis", "Mendoza Cruz", "   ");
         // 5. Teléfono con letras o incompleto
-        prueba.modificarTelefono("Jorge", "Ortega Jiménez", "abc123");
+        modificarTelefono("Jorge", "Ortega Jiménez", "abc123");
         // 6. Apellido incompleto (no debe encontrarlo)
-        prueba.modificarTelefono("Diego", "González", "5599998888");
+        modificarTelefono("Diego", "González", "5599998888");
 
         // Ana debe tener 5512345678, Sofía 5587654321.
         // Luis, Jorge y Diego deben conservar su teléfono original.
         System.out.println("\n--- Estado final ---");
-        for (Contacto c : prueba.contactos) {
+        for (Contacto c : contactos) {
             System.out.println(c);
         }
     }
