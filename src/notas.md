@@ -24,9 +24,9 @@ Espacio libre - Daniel (Javier Apoyo) - rev - Completo
 Iteracion 3 - Metodos funcionando con el Objeto Contacto
 Añadir contactos  - Mike - Completo
 Buscar contactos - Jairo - Completo
-Listar contactos - Nat - 
+Listar contactos - Nat - Completo
 Buscar contactos por nombre(Menu general) - Zaira (Jairo apoyo) - Rev
 Eliminar contacto -  Diego - Completo 
 Modificar telefono -  Adrian - Pendiente
-Agenda llena - Cristian - Rev 1/2
+Agenda llena - Cristian - Completo
 Espacio libre - Daniel (Javier Apoyo) - Completo
