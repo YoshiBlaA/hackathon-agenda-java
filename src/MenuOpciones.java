@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.random.RandomGenerator;
 
@@ -11,14 +12,23 @@ public class MenuOpciones {
         Agenda agenda;
         String datosUser;
 
-        try {
-            System.out.println("¿ De que tamaño quieres la agenda ?");
-            int tamano = scr.nextInt();
-            agenda = new Agenda(tamano);
-        }catch (Exception e){
-            System.out.println("Debes ingresar un numero");
-            return;
+        while (true) {
+            try {
+                System.out.println("¿De qué tamaño quieres la agenda?");
+                System.out.print("Ingresa el tamannio de tu agenda: ");
+                int tamano = scr.nextInt();
+                if (tamano < 1) throw new IllegalArgumentException("El tamannio de la lista no puede ser negativo");
+                agenda = new Agenda(tamano);
+                break;
+            } catch (InputMismatchException e) {
+                System.err.println("Debes ingresar un número");
+                scr.nextLine();
+            } catch (IllegalArgumentException e) {
+                System.err.println(e.getMessage());
+                scr.nextLine();
+            }
         }
+
 
         do {
             System.out.println("Hola bienvenid@ a tu agenda de contactos");
@@ -31,7 +41,7 @@ public class MenuOpciones {
             System.out.println("6. Espacio disponible"); // memoria y espacio libre
             System.out.println("0. Salir");
 
-            System.out.println("Elige una opción");
+            System.out.print("Elige una opción: ");
 
             try {
                 opcion = scr.nextInt();
@@ -45,23 +55,25 @@ public class MenuOpciones {
             scr.nextLine();
             switch (opcion) {
                 case 1: // añadir contactos
+                    //ANNIADIR UN LANZAMIENTO DE EXCEPCION PARA CUANDO LOS DATOS ESTAN VACIOS
+
                     System.out.println("Igresaste a la opción de añadir contacto");
-                    System.out.println("Nombre");
+                    System.out.print("Escribe el nombre: ");
                     String nom = scr.nextLine();
-                    System.out.println("Apellido");
+                    System.out.print("Escribe el apellido: ");
                     String app = scr.nextLine();
-                    System.out.println("Telefono");
+                    System.out.print("Escribe el telefono: ");
                     String tel = scr.nextLine();
                     Contacto newContac = new Contacto(nom, app, tel);
                     agenda.anniadirContacto(newContac);
                     break;
                 case 2:  // buscar contactos
-                    System.out.println("Ingresa el nombre del contacto");
+                    System.out.print("Ingresa el nombre del contacto (nombre y apellida separados por coma): ");
                     String nombreCompleto = scr.nextLine();
                     FuncionJairo.buscarContactos(nombreCompleto, agenda.getContactos());
                     break;
                 case 3: // lista de contactos
-                    System.out.println("Contacot en orden alfabetico, mostrando nombre apellido y telefono");
+                    System.out.println("Contacto en orden alfabético, mostrando nombre apellido y telefono");
                     ListarContactos.listarContactos(agenda.getContactos());
                     break;
                 case 4: // Eliminar Contacto
@@ -69,7 +81,7 @@ public class MenuOpciones {
                         for (Contacto cont : agenda.getContactos()) {
                             System.out.println(cont.toString());
                         }
-                        System.out.println("Que contacto deseas eliminar?");
+                        System.out.println("Ingresa el índice del contacto que quieres eliminar: ");
                         int seleccion = scr.nextInt();
                         Contacto contacto = agenda.getContactos().get(seleccion - 1);
                         agenda.setContactos(FuncionDiego.eliminarContacto(contacto, agenda.getContactos()));
@@ -110,7 +122,7 @@ public class MenuOpciones {
             }
 
 
-        } while (opcion !=0);
+        } while (opcion != 0);
         scr.close();
     }
 }
